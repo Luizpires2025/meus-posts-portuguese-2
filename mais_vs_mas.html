@@ -137,6 +137,23 @@
             color: #1e40af;
             font-weight: 500;
         }
+        .back-button {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: #1e40af; /* Azul do logo */
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            z-index: 10; /* Garante que o botão fique acima de outros elementos */
+        }
+        .back-button:hover {
+            background-color: #3b82f6; /* Azul mais claro ao passar o mouse */
+        }
         @media (max-height: 700px) {
             .title-text { font-size: 1.3rem; }
             .subtitle-text { font-size: 0.95rem; }
