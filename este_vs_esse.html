@@ -137,6 +137,23 @@
             color: #1e40af;
             font-weight: 500;
         }
+        .back-button {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: #1e40af; /* Azul do logo */
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            z-index: 10; /* Garante que o botão fique acima de outros elementos */
+        }
+        .back-button:hover {
+            background-color: #3b82f6; /* Azul mais claro ao passar o mouse */
+        }
         @media (max-height: 700px) {
             .title-text { font-size: 1.3rem; }
             .subtitle-text { font-size: 0.95rem; }
@@ -149,6 +166,7 @@
             .final-phrase { font-size: 0.8rem; bottom: 12%; }
             .signature { font-size: 0.65rem; bottom: 6%; }
             .story-content { padding-bottom: 22%; }
+            .back-button { padding: 0.3rem 0.6rem; font-size: 0.7rem; top: 0.75rem; left: 0.75rem; }
         }
         @media (max-height: 600px) {
             .title-text { font-size: 1.1rem; }
@@ -162,6 +180,7 @@
             .final-phrase { font-size: 0.75rem; bottom: 15%; }
             .signature { font-size: 0.6rem; bottom: 8%; }
             .story-content { padding-bottom: 25%; }
+            .back-button { padding: 0.2rem 0.5rem; font-size: 0.6rem; top: 0.5rem; left: 0.5rem; }
         }
     </style>
 </head>
@@ -169,6 +188,7 @@
     <div class="story-wrapper">
         <div class="story-container">
             <div class="story-content">
+                <button class="back-button" onclick="window.location.href='index.html'">← Voltar</button>
                 <div class="header-content">
                     <h1 class="title-text">ESTE ou ESSE? 🤔</h1>
                     <p class="explanation-text">A distância faz a diferença!</p>
@@ -202,3 +222,4 @@
     </div>
 </body>
 </html>
+
