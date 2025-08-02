@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ser vs. Estar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+        }
+        .story-wrapper {
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            max-height: 711px;
+            position: relative;
+            overflow: hidden;
+            background-color: #e0f2fe;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .story-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 177.77%;
+            height: 0;
+        }
+        .story-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
+            box-sizing: border-box;
+            padding-bottom: 20%; /* Ajustado para acomodar a assinatura e o rosto */
+        }
+        .header-content {
+            width: 100%;
+            padding-top: 1rem;
+            position: relative;
+        }
+        .cards-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            width: 100%;
+            flex-grow: 1;
+            padding: 0 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .card {
+            background-color: white;
+            border-radius: 1.5rem;
+            padding: 0.6rem;
+            margin: 0.4rem;
+            width: 45%;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            transition: transform 0.2s ease-in-out;
+            min-height: 200px;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+        }
+        .emoji {
+            font-size: 2.2rem;
+            margin-bottom: 0.2rem;
+        }
+        .title-text {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 0.6rem;
+        }
+        .subtitle-text {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        .explanation-text {
+            font-size: 0.8rem;
+            color: #374151;
+            margin-bottom: 0.1rem;
+            line-height: 1.2;
+        }
+        .explanation-text.english {
+            font-size: 0.7rem;
+            color: #4b5563;
+            line-height: 1.2;
+        }
+        .example-text {
+            font-size: 0.75rem;
+            font-style: italic;
+            color: #4b5563;
+            margin-bottom: 0.1rem;
+            line-height: 1.2;
+        }
+        .example-text.english {
+            font-size: 0.65rem;
+            color: #6b7280;
+            line-height: 1.2;
+        }
+        .final-phrase {
+            position: absolute;
+            bottom: 10%; /* Ajustado para ficar acima da assinatura */
+            width: 90%;
+            font-size: 0.85rem;
+            color: #1e40af;
+            font-weight: 500;
+        }
+        .signature {
+            position: absolute;
+            bottom: 5%; /* Posição da assinatura */
+            width: 90%;
+            font-size: 0.7rem;
+            color: #1e40af;
+            font-weight: 500;
+        }
+        @media (max-height: 700px) {
+            .title-text { font-size: 1.3rem; }
+            .subtitle-text { font-size: 0.95rem; }
+            .explanation-text { font-size: 0.75rem; }
+            .explanation-text.english { font-size: 0.65rem; }
+            .example-text { font-size: 0.7rem; }
+            .example-text.english { font-size: 0.6rem; }
+            .emoji { font-size: 2rem; }
+            .card { padding: 0.5rem; min-height: 180px; }
+            .final-phrase { font-size: 0.8rem; bottom: 12%; }
+            .signature { font-size: 0.65rem; bottom: 6%; }
+            .story-content { padding-bottom: 22%; }
+        }
+        @media (max-height: 600px) {
+            .title-text { font-size: 1.1rem; }
+            .subtitle-text { font-size: 0.85rem; }
+            .explanation-text { font-size: 0.7rem; }
+            .explanation-text.english { font-size: 0.6rem; }
+            .example-text { font-size: 0.65rem; }
+            .example-text.english { font-size: 0.55rem; }
+            .emoji { font-size: 1.6rem; }
+            .card { padding: 0.4rem; min-height: 160px; }
+            .final-phrase { font-size: 0.75rem; bottom: 15%; }
+            .signature { font-size: 0.6rem; bottom: 8%; }
+            .story-content { padding-bottom: 25%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="story-wrapper">
+        <div class="story-container">
+            <div class="story-content">
+                <div class="header-content">
+                    <h1 class="title-text">SER ou ESTAR? 🤔</h1>
+                    <p class="explanation-text">Aprenda a diferença que confunde todo mundo!</p>
+                </div>
+                <div class="cards-container">
+                    <div class="card bg-green-100">
+                        <span class="emoji">👤</span>
+                        <h2 class="subtitle-text text-green-700">SER</h2>
+                        <p class="explanation-text">Indica **identidade**, **característica permanente**, **profissão**, **nacionalidade**.</p>
+                        <p class="explanation-text english">(Indicates **identity**, **permanent characteristic**, **profession**, **nationality**.)</p>
+                        <p class="example-text">"Eu **sou** estudante."</p>
+                        <p class="example-text english">("I **am** a student.")</p>
+                        <p class="example-text">"Ela **é** alta."</p>
+                        <p class="example-text english">("She **is** tall.")</p>
+                    </div>
+                    <div class="card bg-yellow-100">
+                        <span class="emoji">📍</span>
+                        <h2 class="subtitle-text text-yellow-700">ESTAR</h2>
+                        <p class="explanation-text">Indica **estado temporário**, **localização**, **emoção**, **condição atual**.</p>
+                        <p class="explanation-text english">(Indicates **temporary state**, **location**, **emotion**, **current condition**.)</p>
+                        <p class="example-text">"Eu **estou** cansado."</p>
+                        <p class="example-text english">("I **am** tired.")</p>
+                        <p class="example-text">"O livro **está** na mesa."</p>
+                        <p class="example-text english">("The book **is** on the table.")</p>
+                    </div>
+                </div>
+                <p class="final-phrase">Ser ou Estar? Agora você vai acertar!</p>
+                <p class="signature">Brazilian Buddy Talk with Luiz</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
