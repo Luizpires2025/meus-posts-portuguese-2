@@ -6,6 +6,13 @@
     <title>Brazilian Buddy Talk - Página Inicial</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Definindo variáveis CSS para alturas, para facilitar cálculos e responsividade */
+        :root {
+            --header-banner-height: 189px;
+            --nav-menu-height: 50px; /* Aprox. 0.75rem padding top/bottom + altura da linha */
+            --signature-height: 40px; /* Aprox. 0.8rem font-size + padding */
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f3f4f6; /* Fundo geral da página */
@@ -13,8 +20,9 @@
             display: flex;
             flex-direction: column;
             align-items: center; /* Centraliza o conteúdo horizontalmente */
-            min-height: 100vh;
+            min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
             box-sizing: border-box;
+            margin: 0; /* Garante que não há margem padrão no body */
         }
         .app-header {
             width: 100%;
@@ -27,7 +35,7 @@
         }
         .header-banner {
             width: 100%;
-            height: 189px; /* Aproximadamente 5cm (189px) */
+            height: var(--header-banner-height); /* Altura definida pela variável */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -47,6 +55,8 @@
             padding: 0.75rem 1rem;
             background-color: #e0f2fe; /* Azul clarinho para o menu */
             flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas pequenas */
+            height: var(--nav-menu-height); /* Altura definida pela variável */
+            box-sizing: border-box;
         }
         .nav-item {
             color: #1e40af; /* Azul do logo para o texto do menu */
@@ -60,41 +70,55 @@
         .nav-item:hover {
             background-color: #bfdbfe; /* Azul um pouco mais escuro no hover */
         }
-        .main-content-area {
+        .hero-section {
             width: 100%;
-            max-width: 768px; /* Largura máxima para tablets e desktops */
-            background-color: #ffffff;
-            border-radius: 1.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            padding: 2rem;
+            flex-grow: 1; /* Permite que esta secção ocupe o espaço restante */
+            min-height: calc(100vh - var(--header-banner-height) - var(--nav-menu-height) - var(--signature-height)); /* Ocupa o espaço restante da viewport */
+            background-image: url('https://placehold.co/1200x600/1e40af/ffffff?text=BEM-VINDO+AO+BRAZILIAN+BUDDY+TALK'); /* Imagem de fundo */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            margin-top: 2rem; /* Espaço entre o cabeçalho e o conteúdo principal */
+            padding: 2rem;
+            box-sizing: border-box;
+            color: white; /* Texto branco sobre a imagem */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra no texto para melhor leitura */
         }
-        h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #1e40af;
-            margin-bottom: 1rem;
+        .hero-section h1 {
+            font-size: 3rem; /* Título maior na imagem */
+            color: white; /* Garante cor branca */
+            margin-bottom: 0.5rem;
         }
-        p {
-            font-size: 1rem;
-            margin-bottom: 2rem;
-            color: #4b5563;
+        .hero-section p {
+            font-size: 1.25rem; /* Texto maior na imagem */
+            color: white; /* Garante cor branca */
+            margin-bottom: 0;
         }
         .signature {
-            margin-top: 2rem;
+            width: 100%;
+            padding: 1rem;
             font-size: 0.8rem;
             color: #6b7280;
+            text-align: center;
+            box-sizing: border-box;
+            height: var(--signature-height); /* Altura definida pela variável */
         }
 
         /* Responsividade */
         @media (max-width: 640px) {
-            h1 { font-size: 2rem; }
-            p { font-size: 0.9rem; }
+            :root {
+                --header-banner-height: 150px; /* Altura do banner menor em mobile */
+                --nav-menu-height: 40px; /* Ajuste para mobile */
+                --signature-height: 30px; /* Ajuste para mobile */
+            }
+            .hero-section h1 { font-size: 2rem; }
+            .hero-section p { font-size: 1rem; }
             .nav-item { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
-            .header-banner { height: 150px; } /* Altura do banner menor em mobile */
-            .main-content-area { padding: 1.5rem; margin-top: 1rem; }
             .nav-menu-horizontal { gap: 0.5rem; padding: 0.5rem; }
+            .signature { font-size: 0.7rem; padding: 0.75rem; }
         }
     </style>
 </head>
@@ -114,12 +138,12 @@
         </nav>
     </header>
 
-    <div class="main-content-area">
+    <!-- Secção da imagem grande com texto sobreposto -->
+    <div class="hero-section">
         <h1>Bem-vindo ao Brazilian Buddy Talk!</h1>
         <p>A sua plataforma para aprender português de forma divertida e eficaz.</p>
-        <!-- Conteúdo principal da página inicial virá aqui, abaixo do menu -->
-        
-        <p class="signature">Brazilian Buddy Talk with Luiz</p>
     </div>
+    
+    <p class="signature">Brazilian Buddy Talk with Luiz</p>
 </body>
 </html>
