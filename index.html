@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brazilian Buddy Talk - Posts com Dicas</title>
+    <title>Brazilian Buddy Talk - Página Inicial</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -76,75 +76,25 @@
             color: #1e40af;
             margin-bottom: 1rem;
         }
-        h2 {
-            font-size: 1.5rem; /* text-2xl */
-            font-weight: 600;
-            color: #374151;
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-        }
         p {
             font-size: 1rem;
             margin-bottom: 2rem;
             color: #4b5563;
-        }
-        .post-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 1.5rem;
-        }
-        .post-list-item {
-            margin-bottom: 0.75rem;
-        }
-        .post-link {
-            display: block;
-            background-color: #e0f2fe; /* Azul clarinho do fundo dos posts */
-            color: #1e40af; /* Azul do logo */
-            padding: 0.75rem 1rem;
-            border-radius: 0.75rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-        }
-        .post-link:hover {
-            background-color: #bfdbfe; /* Azul um pouco mais escuro no hover */
-            transform: translateY(-2px);
         }
         .signature {
             margin-top: 2rem;
             font-size: 0.8rem;
             color: #6b7280;
         }
-        .back-button {
-            background-color: #1e40af; /* Azul do logo */
-            color: white;
-            padding: 0.4rem 0.8rem;
-            border-radius: 0.5rem;
-            font-size: 0.8rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.2s ease-in-out;
-            text-decoration: none; /* Para que não pareça um link sublinhado */
-            display: inline-flex; /* Para alinhar bem o texto */
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem; /* Espaço abaixo do botão */
-        }
-        .back-button:hover {
-            background-color: #3b82f6; /* Azul mais claro ao passar o mouse */
-        }
 
         /* Responsividade */
         @media (max-width: 640px) {
             h1 { font-size: 2rem; }
-            h2 { font-size: 1.5rem; }
             p { font-size: 0.9rem; }
             .nav-item { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
             .header-banner { height: 150px; } /* Altura do banner menor em mobile */
             .main-content-area { padding: 1.5rem; margin-top: 1rem; }
             .nav-menu-horizontal { gap: 0.5rem; padding: 0.5rem; }
-            .back-button { padding: 0.3rem 0.6rem; font-size: 0.7rem; }
         }
     </style>
 </head>
@@ -160,48 +110,16 @@
             <a href="posts_dicas.html" class="nav-item">💡 Posts com Dicas</a>
             <a href="sobre_professor.html" class="nav-item">👨‍🏫 Sobre o Professor Luiz</a>
             <a href="downloads.html" class="nav-item">⬇️ Conteúdo para Download</a>
-            <a href="contato.html" class="nav-item">✉️ Contato</a>
+            <a href="contato.html" class="nav-item">✉️ Contacto</a>
         </nav>
     </header>
 
     <div class="main-content-area">
-        <a href="index.html" class="back-button">← Voltar ao Início</a>
-
-        <h1>Posts com Dicas de Português</h1>
-        <p>Aqui encontra todos os nossos posts didáticos para aprimorar o seu português. Clique para explorar!</p>
-
-        <h2>Gramática e Pronúncia</h2>
-        <ul class="post-list">
-            <li class="post-list-item"><a href="mais_vs_mas.html" class="post-link">1. MAIS ou MAS? 🤔</a></li>
-            <li class="post-list-item"><a href="ser_vs_estar.html" class="post-link">2. SER ou ESTAR? 🤔</a></li>
-            <li class="post-list-item"><a href="este_vs_esse.html" class="post-link">3. ESTE ou ESSE? 🤔</a></li>
-            <li class="post-list-item"><a href="genero_palavras.html" class="post-link">4. GÊNERO DAS PALAVRAS? 🤔</a></li>
-            <li class="post-list-item"><a href="contracoes_de.html" class="post-link">5. DE + ARTIGO? 🤔</a></li>
-            <li class="post-list-item"><a href="contracoes_em.html" class="post-link">6. EM + ARTIGO? 🤔</a></li>
-            <li class="post-list-item"><a href="pronomes_possessivos.html" class="post-link">7. PRONOMES POSSESSIVOS? 🤔</a></li>
-            <li class="post-list-item"><a href="pronomes_retos.html" class="post-link">8. PRONOMES RETOS? 🤔</a></li>
-            <li class="post-list-item"><a href="sons_nasais_r_rr.html" class="post-link">9. SONS NASAIS & R/RR? 🤔</a></li>
-            <li class="post-list-item"><a href="sons_s_ss.html" class="post-link">10. SONS DO S & SS? 🤔</a></li>
-            <li class="post-list-item"><a href="verbos_ar.html" class="post-link">11. VERBOS REGULARES -AR? 🤔</a></li>
-            <li class="post-list-item"><a href="verbos_er.html" class="post-list-item">12. VERBOS REGULARES -ER? 🤔</a></li>
-            <li class="post-list-item"><a href="verbos_ir.html" class="post-link">13. VERBOS REGULARES -IR? 🤔</a></li>
-        </ul>
-
-        <h2>Série: Falsos Cognatos</h2>
-        <ul class="post-list">
-            <li class="post-list-item"><a href="falsos_cognatos_p1.html" class="post-link">Falsos Cognatos - Parte 1</a></li>
-            <li class="post-list-item"><a href="falsos_cognatos_p2.html" class="post-link">Falsos Cognatos - Parte 2</a></li>
-            <li class="post-list-item"><a href="falsos_cognatos_p3.html" class="post-link">Falsos Cognatos - Parte 3</a></li>
-            <li class="post-list-item"><a href="falsos_cognatos_p4.html" class="post-link">Falsos Cognatos - Parte 4</a></li>
-            <li class="post-list-item"><a href="falsos_cognatos_p5.html" class="post-link">Falsos Cognatos - Parte 5</a></li>
-            <li class="post-list-item"><a href="falsos_cognatos_p6.html" class="post-link">Falsos Cognatos - Parte 6</a></li>
-            <li class="post-list-item"><a href="falsos_cognatos_p7.html" class="post-link">Falsos Cognatos - Parte 7</a></li>
-        </ul>
-
+        <h1>Bem-vindo ao Brazilian Buddy Talk!</h1>
+        <p>A sua plataforma para aprender português de forma divertida e eficaz.</p>
+        <!-- Conteúdo principal da página inicial virá aqui, abaixo do menu -->
+        
         <p class="signature">Brazilian Buddy Talk with Luiz</p>
     </div>
 </body>
 </html>
-
-
-
