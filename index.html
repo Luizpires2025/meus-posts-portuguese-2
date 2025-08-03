@@ -12,13 +12,55 @@
             color: #374151; /* Cor de texto padrão */
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            align-items: center; /* Centraliza o conteúdo horizontalmente */
             min-height: 100vh;
-            padding: 1.5rem;
             box-sizing: border-box;
         }
-        .main-container {
+        .app-header {
+            width: 100%;
+            background-color: #1e40af; /* Azul escuro do logo para o cabeçalho */
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            position: sticky; /* Para fixar no topo ao rolar */
+            top: 0;
+            z-index: 20; /* Para garantir que fique acima de outros elementos */
+        }
+        .header-banner {
+            width: 100%;
+            height: 189px; /* Aproximadamente 5cm (189px) */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        .header-logo {
+            max-height: 100%; /* Garante que o logo caiba no banner */
+            width: auto;
+        }
+        .nav-menu-horizontal {
+            display: flex;
+            flex-direction: row; /* Menu horizontal */
+            justify-content: center; /* Centraliza os itens do menu */
+            gap: 1rem; /* Espaço entre os itens do menu */
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: #e0f2fe; /* Azul clarinho para o menu */
+            flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas pequenas */
+        }
+        .nav-item {
+            color: #1e40af; /* Azul do logo para o texto do menu */
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem; /* Tamanho da fonte menor para menu horizontal */
+            transition: background-color 0.2s ease-in-out;
+        }
+        .nav-item:hover {
+            background-color: #bfdbfe; /* Azul um pouco mais escuro no hover */
+        }
+        .main-content-area {
             width: 100%;
             max-width: 768px; /* Largura máxima para tablets e desktops */
             background-color: #ffffff;
@@ -26,45 +68,18 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             padding: 2rem;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin-top: 2rem; /* Espaço entre o cabeçalho e o conteúdo principal */
         }
         h1 {
-            font-size: 2.5rem; /* text-5xl */
+            font-size: 2.5rem;
             font-weight: bold;
-            color: #1e40af; /* Azul do logo */
+            color: #1e40af;
             margin-bottom: 1rem;
         }
         p {
             font-size: 1rem;
             margin-bottom: 2rem;
             color: #4b5563;
-        }
-        .nav-menu {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem; /* Espaço entre os itens do menu */
-            width: 100%;
-            max-width: 400px; /* Largura máxima para o menu */
-        }
-        .nav-item {
-            background-color: #e0f2fe; /* Azul clarinho */
-            color: #1e40af; /* Azul do logo */
-            padding: 1rem 1.5rem;
-            border-radius: 0.75rem;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.125rem; /* text-lg */
-            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .nav-item:hover {
-            background-color: #bfdbfe; /* Azul um pouco mais escuro no hover */
-            transform: translateY(-2px);
         }
         .signature {
             margin-top: 2rem;
@@ -76,17 +91,20 @@
         @media (max-width: 640px) {
             h1 { font-size: 2rem; }
             p { font-size: 0.9rem; }
-            .nav-item { padding: 0.8rem 1rem; font-size: 1rem; }
-            .main-container { padding: 1.5rem; }
+            .nav-item { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+            .header-banner { height: 150px; } /* Altura do banner menor em mobile */
+            .main-content-area { padding: 1.5rem; margin-top: 1rem; }
+            .nav-menu-horizontal { gap: 0.5rem; padding: 0.5rem; }
         }
     </style>
 </head>
 <body>
-    <div class="main-container">
-        <h1>Bem-vindo ao Brazilian Buddy Talk!</h1>
-        <p>A sua plataforma para aprender português de forma divertida e eficaz.</p>
-
-        <nav class="nav-menu">
+    <header class="app-header">
+        <div class="header-banner">
+            <!-- Insira aqui o seu logo. Certifique-se de que o caminho/URL está correto. -->
+            <img src="image.png" alt="Brazilian Buddy Talk Logo" class="header-logo" onerror="this.onerror=null;this.src='https://placehold.co/180x80/1e40af/ffffff?text=SEU+LOGO';">
+        </div>
+        <nav class="nav-menu-horizontal">
             <a href="videos.html" class="nav-item">🎬 Vídeos</a>
             <a href="aulas.html" class="nav-item">📚 Aulas</a>
             <a href="posts_dicas.html" class="nav-item">💡 Posts com Dicas</a>
@@ -94,9 +112,16 @@
             <a href="downloads.html" class="nav-item">⬇️ Conteúdo para Download</a>
             <a href="contato.html" class="nav-item">✉️ Contacto</a>
         </nav>
+    </header>
 
+    <div class="main-content-area">
+        <h1>Bem-vindo ao Brazilian Buddy Talk!</h1>
+        <p>A sua plataforma para aprender português de forma divertida e eficaz.</p>
+        <!-- Conteúdo principal da página inicial virá aqui, abaixo do menu -->
+        
         <p class="signature">Brazilian Buddy Talk with Luiz</p>
     </div>
 </body>
 </html>
+
 
